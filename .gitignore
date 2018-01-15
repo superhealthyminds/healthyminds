@@ -1,7 +1,3 @@
-nconfig.env
-ode_modules/
-config.env
-
 # Logs
 logs
 *.log
@@ -59,4 +55,4 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+*.env
