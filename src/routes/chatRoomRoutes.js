@@ -1,10 +1,10 @@
 const express = require('express');
-const postQueries = require('../db/queries/postQueries');
+const chatRoomsQueries = require('../db/queries/chatRoomsQueries');
 
 const routes = () => {
   const chatRoomRoutes = express.Router();
   chatRoomRoutes.route('/chatRoomsPublic').get((req, res) => {
-    postQueries.getChatRoomsPosts((err, chatRoomsPublic) => {
+    chatRoomsQueries.getChatRoomsPosts((err, chatRoomsPublic) => {
       if (err) {
         console.log(err);
         res.send('error')
