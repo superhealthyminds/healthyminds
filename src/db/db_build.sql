@@ -30,17 +30,6 @@ CREATE TABLE users (
 INSERT INTO users (fullName, email, password,diseaseId)
 VALUES ('Michael Brown', 'michaelBrown@healthyminds.com', '123456', 1);
 
-CREATE TABLE comments (
-    id SERIAL PRIMARY KEY,
-    userId INTEGER REFERENCES users(id),
-    content VARCHAR(500) NOT NULL,
-    love INTEGER NOT NULL,
-    time_stamp TIMESTAMP NOT NULL
-    postId INTEGER REFERENCES posts(id),
-);
-
-INSERT INTO comments (userId, content, time_stamp, love)
-VALUES (1, 'Blablabla', '20017-12-16 06:00:00', 1);
 
 
 CREATE TABLE posts (
@@ -52,8 +41,22 @@ CREATE TABLE posts (
     tagIds INTEGER REFERENCES tags(id)
 );
 
-INSERT INTO posts (type, title, content, commentsId, time_stamp, tagIds)
-VALUES ('story', 'My epic party', 'Hey, all invited', 1, '20017-12-16 06:00:00', 1);
+INSERT INTO posts (type, title, content, time_stamp, tagIds)
+VALUES ('story', 'My epic party', 'Hey, all invited', '20017-12-16 06:00:00', 1);
+
+
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
+    userId INTEGER REFERENCES users(id),
+    content VARCHAR(500) NOT NULL,
+    love INTEGER NOT NULL,
+    time_stamp TIMESTAMP NOT NULL,
+    postId INTEGER REFERENCES posts(id)
+);
+
+INSERT INTO comments (userId, content, love, time_stamp, postId)
+VALUES (1, 'update post with postId', 1, '20017-12-16 06:00:00',1 );
+
 
 CREATE TABLE chatRooms (
    id SERIAL PRIMARY KEY,
