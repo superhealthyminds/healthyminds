@@ -7,6 +7,7 @@ const routes = () => {
     postQueries.getHomePagePosts((err, homePagePosts) => {
       if (err) {
         console.log(err);
+        res.send('error')
       } else {
         res.json(homePagePosts);
       }
