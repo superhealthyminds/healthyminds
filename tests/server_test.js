@@ -8,7 +8,7 @@ test('tape is working', t => {
   t.end();
 });
 
-test('GET /', t => {
+test('Testing empty root get request - / ', t => {
   request(app)
     .get('/')
     .expect('Content-Type', /json/)

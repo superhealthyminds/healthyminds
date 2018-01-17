@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.json('hi there');
+  res.send('hi there');
 });
 
 app.use('/posts', postsRoutes);
@@ -21,8 +21,8 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
-    error: {}
+    error: { err, res, req }
   });
 });
 
-module.exports = app; 
+module.exports = app;
