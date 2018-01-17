@@ -1,3 +1,4 @@
+
 const connect = require('../db_connections.js');
 
 const getHomePagePosts = (cb) => {
