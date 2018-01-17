@@ -36,7 +36,6 @@ CREATE TABLE comments (
     content VARCHAR(500) NOT NULL,
     love INTEGER NOT NULL,
     time_stamp TIMESTAMP NOT NULL
-    postId INTEGER REFERENCES posts(id),
 );
 
 INSERT INTO comments (userId, content, time_stamp, love)
@@ -48,9 +47,10 @@ CREATE TABLE posts (
     type VARCHAR(40) NOT NULL,
     title VARCHAR(100) NOT NULL,
     content VARCHAR(2000) NOT NULL,
+    commentsId INTEGER REFERENCES comments(id),
     time_stamp TIMESTAMP NOT NULL,
-    tagIds INTEGER REFERENCES tags(id)
-);
+    tagIds INTEGER REFERENCES tags(id) 
+); 
 
 INSERT INTO posts (type, title, content, commentsId, time_stamp, tagIds)
 VALUES ('story', 'My epic party', 'Hey, all invited', 1, '20017-12-16 06:00:00', 1);
