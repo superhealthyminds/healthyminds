@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const getHomePagePosts = require('./getHomePosts');
-const getDiseases = require('./getDiseases');
+const getAllDiseases = require('./getAllDiseases');
 
 router.get('/homePagePosts', getHomePagePosts);
-router.get('/Diseases', getDiseases);
+router.get('/Diseases', getAllDiseases);
 
 module.exports = router;
