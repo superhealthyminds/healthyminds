@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const postsRoutes = require('./routes/postsRoutes')();
+const router = require('./controllers/router');
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   res.send('hi there');
 });
 
-app.use('/posts', postsRoutes);
+app.use(router);
 
 app.listen(port, () => {
   console.log(`running on port http://localhost:${port}`);
