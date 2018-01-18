@@ -9,8 +9,6 @@ test('Testing empty root get request - / ', t => {
     .expect('Content-Type', /json/)
     .expect(200)
     .end((err, res) => {
-      console.log('in end');
-      console.log(res.text);
       t.end();
       process.exit(0);
     });

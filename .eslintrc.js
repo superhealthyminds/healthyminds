@@ -8,7 +8,6 @@ module.exports = {
     },
     "extends": "eslint:recommended",
     "rules": {
-        "no-console": "off",
         "indent": [
             "error",
             2
@@ -19,7 +18,8 @@ module.exports = {
         ],
         "quotes": [
             "error",
-            "single"
+            "single",
+            { "allowTemplateLiterals": true }
         ],
         "semi": [
             "error",

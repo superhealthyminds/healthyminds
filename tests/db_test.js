@@ -21,6 +21,7 @@ tape('testing post request', t => {
   runDbBuild((err, response) => {
     postQueries.getHomePagePosts((err, res) => {
       if (err) {
+      // eslint-disable-next-line no-console
         console.log(`error:  + ${err}`);
       }
       t.deepEqual(res, expected, 'Returns success message');
