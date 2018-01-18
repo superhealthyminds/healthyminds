@@ -5,6 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
+    "test": "node tests/server_test.js",
     "dev": "nodemon src/app.js"
   },
   "author": "",
@@ -16,7 +17,9 @@
     "pg": "^7.4.1"
   },
   "devDependencies": {
-    "eslint": "^4.15.0",
-    "nodemon": "^1.13.3"
+    "nodemon": "^1.13.3",
+    "supertest": "^3.0.0",
+    "tape": "^4.8.0",
+    "eslint": "^4.15.0"
   }
 }
