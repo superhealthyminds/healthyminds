@@ -14,10 +14,9 @@ app.get('/', (req, res) => {
 app.use(router);
 
 app.listen(port, () => {
-  console.log(`running on port http://localhost:${port}`);
 });
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,

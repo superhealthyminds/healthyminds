@@ -18,11 +18,8 @@ tape('testing post request', t => {
     time_stamp: new Date('20017-12-16 06:00:00'),
     tagids: 1
   }];
-  runDbBuild((err, response) => {
+  runDbBuild(() => {
     postQueries.getHomePagePosts((err, res) => {
-      if (err) {
-        console.log(`error:  + ${err}`);
-      }
       t.deepEqual(res, expected, 'Returns success message');
       t.end();
     });
