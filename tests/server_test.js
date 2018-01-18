@@ -3,11 +3,6 @@ const request = require('supertest');
 
 const app = require('../src/app');
 
-test('tape is working', t => {
-  t.equal(1, 1, 'one equals one');
-  t.end();
-});
-
 test('Testing empty root get request - / ', t => {
   request(app)
     .get('/')
@@ -20,3 +15,4 @@ test('Testing empty root get request - / ', t => {
       process.exit(0);
     });
 });
+
