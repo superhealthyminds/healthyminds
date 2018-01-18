@@ -15,7 +15,7 @@ tape('testing post request', t => {
       tagids: 1
     }
   ];
-  runDbBuild((err, response) => {
+  runDbBuild(() => {
     postQueries.getHomePagePosts((err, res) => {
       t.deepEqual(res, expected, 'Returns success message');
       t.end();

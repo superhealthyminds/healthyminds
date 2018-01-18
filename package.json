@@ -7,7 +7,7 @@
     "start": "node src/app.js",
     "test": "node tests/server_test.js",
     "dev": "nodemon src/app.js",
-    "inspect":"node --inspect ./src/app.js ",
+    "inspect": "node --inspect ./src/app.js ",
     "lint": "eslint 'src/**/*.js'"
   },
   "author": "",
