@@ -37,8 +37,8 @@ CREATE TABLE posts (
     title VARCHAR(100) NOT NULL,
     content VARCHAR(2000) NOT NULL,
     time_stamp TIMESTAMP NOT NULL,
-    tagIds INTEGER REFERENCES tags(id) 
-); 
+    tagIds INTEGER REFERENCES tags(id)
+);
 
 INSERT INTO posts (type, title, content, time_stamp, tagIds)
 VALUES ('story', 'My epic party', 'Hey, all invited', '20017-12-16 06:00:00', 1);

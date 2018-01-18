@@ -8,13 +8,10 @@ test('Testing empty root get request - / ', t => {
     .get('/')
     .expect('Content-Type', /json/)
     .expect(200)
-    .end((err, res) => {
-      console.log(res.text);
-      t.ok(res.text);
+    .end(() => { 
       t.end();
     });
 });
-
 test('Testing the root /homePagePosts  ', t => {
   const expectedThings = [
     {

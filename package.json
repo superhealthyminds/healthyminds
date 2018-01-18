@@ -7,7 +7,8 @@
     "start": "node src/app.js",
     "test": "node tests/server_test.js",
     "dev": "nodemon src/app.js",
-    "inspect":"node --inspect ./src/app.js "
+    "inspect":"node --inspect ./src/app.js ",
+    "lint": "eslint 'src/**/*.js'"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "nodemon": "^1.13.3",
     "supertest": "^3.0.0",
-    "tape": "^4.8.0"
+    "tape": "^4.8.0",
+    "eslint": "^4.15.0"
   }
 }

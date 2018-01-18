@@ -17,9 +17,6 @@ tape('testing post request', t => {
   ];
   runDbBuild((err, response) => {
     postQueries.getHomePagePosts((err, res) => {
-      if (err) {
-        console.log(`error:  + ${err}`);
-      }
       t.deepEqual(res, expected, 'Returns success message');
       t.end();
     });
