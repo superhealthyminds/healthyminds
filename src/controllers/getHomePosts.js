@@ -1,4 +1,3 @@
-const express = require('express');
 const postQueries = require('../db/queries/postQueries');
 const commentsQueries = require('../db/queries/commentsQueries');
 
