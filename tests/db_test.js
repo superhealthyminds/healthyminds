@@ -23,7 +23,7 @@ tape('testing post request', t => {
     postQueries.getHomePagePosts((err, res) => {
       if (err) {
       // eslint-disable-next-line no-console
-        console.log(`error:  + ${err}`);
+        console.log(`error:  + ${err}`); // TODO: Error handling
       }
       t.deepEqual(res, expected, 'Returns success message');
       t.end();

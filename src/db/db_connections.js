@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 require('env2')('config.env');
 
 // eslint-disable-next-line no-unused-vars
-let DB_URL = process.env.DB_URL;
+let DB_URL = process.env.DB_URL; // TODO: Error handling
 if (process.env.NODE_ENV === 'test') {
   DB_URL = process.env.TEST_DB_URL;
 }
