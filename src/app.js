@@ -16,3 +16,13 @@ app.use(router);
 app.listen(port, () => {
   console.log(`running on port http://localhost:${port}`);
 });
+
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: { err, res, req }
+  });
+});
+
+module.exports = app;
