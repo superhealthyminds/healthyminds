@@ -8,8 +8,7 @@ test('Testing empty root get request - / ', t => {
     .get('/')
     .expect('Content-Type', /json/)
     .expect(200)
-    .end((err, res) => { // eslint-disable-line no-unused-vars
-
+    .end(() => { 
       t.end();
       process.exit(0);
     });

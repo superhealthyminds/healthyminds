@@ -18,13 +18,8 @@ tape('testing post request', t => {
     time_stamp: new Date('20017-12-16 06:00:00'),
     tagids: 1
   }];
-  // eslint-disable-next-line no-unused-vars
-  runDbBuild((err, response) => {
+  runDbBuild(() => {
     postQueries.getHomePagePosts((err, res) => {
-      if (err) {
-      // eslint-disable-next-line no-console
-        console.log(`error:  + ${err}`); // TODO: Error handling
-      }
       t.deepEqual(res, expected, 'Returns success message');
       t.end();
     });
