@@ -30,7 +30,6 @@ test('Testing the root /homePagePosts  ', t => {
     .end((err, res) => {
       t.ok(res.text);
       let actualThings = res.body.homePagePosts;
-      console.log(actualThings);
       actualThings[0].time_stamp = new Date(actualThings[0].time_stamp);
       t.same(actualThings, expectedThings, 'should get the only post');
       t.end();
