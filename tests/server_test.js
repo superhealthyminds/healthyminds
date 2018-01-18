@@ -15,26 +15,46 @@ test('Testing empty root get request - / ', t => {
     });
 });
 
-test('Testing empty root get request - / ', t => {
+test('Testing the root /homePagePosts  ', t => {
   const expectedThings = [
     {
       id: 1,
       type: 'story',
       title: 'My epic party',
       content: 'Hey, all invited',
-      commentsid: 1,
       time_stamp: new Date('20017-12-16 06:00:00'),
       tagids: 1
     }
   ];
   request(app)
-    .get('/posts/homePagePosts')
+    .get('/homePagePosts')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .end((err, res) => {
+      t.ok(res.text);
+      let actualThings = res.body.homePagePosts;
+      console.log(actualThings);
+      actualThings[0].time_stamp = new Date(actualThings[0].time_stamp);
+      t.same(actualThings, expectedThings, 'should get the only post');
+      t.end();
+    });
+});
+
+test('Testing the root /getAllTags  ', t => {
+  const expectedThings = [
+    {
+      id: 1,
+      tagname: 'cancer',
+      diseaseid: 1
+    }
+  ];
+  request(app)
+    .get('/getAllTags')
     .expect('Content-Type', /json/)
     .expect(200)
     .end((err, res) => {
       t.ok(res.text);
       let actualThings = res.body;
-      actualThings[0].time_stamp = new Date(actualThings[0].time_stamp);
       t.same(actualThings, expectedThings, 'should get the only post');
       t.end();
     });

@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, posts, messages, chatRooms, diseases, tags, comments;
+DROP TABLE IF EXISTS diseases, tags, users, posts, comments, chatRooms, messages;
 
 CREATE TABLE diseases (
     id SERIAL PRIMARY KEY,
@@ -36,7 +36,6 @@ CREATE TABLE posts (
     type VARCHAR(40) NOT NULL,
     title VARCHAR(100) NOT NULL,
     content VARCHAR(2000) NOT NULL,
-    commentsId INTEGER REFERENCES comments(id),
     time_stamp TIMESTAMP NOT NULL,
     tagIds INTEGER REFERENCES tags(id) 
 ); 
