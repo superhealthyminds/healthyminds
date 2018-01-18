@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
 app.use(router);
 
 app.listen(port, () => {
-  console.log(`running on port http://localhost:${port}`);
 });
 
 app.use((err, req, res) => {

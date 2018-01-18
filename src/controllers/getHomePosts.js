@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); // eslint-disable-line no-unused-vars
 const postQueries = require('../db/queries/postQueries');
 const commentsQueries = require('../db/queries/commentsQueries');
 

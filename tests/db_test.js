@@ -18,6 +18,7 @@ tape('testing post request', t => {
     time_stamp: new Date('20017-12-16 06:00:00'),
     tagids: 1
   }];
+  // eslint-disable-next-line no-unused-vars
   runDbBuild((err, response) => {
     postQueries.getHomePagePosts((err, res) => {
       if (err) {
