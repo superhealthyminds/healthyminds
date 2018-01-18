@@ -1,6 +1,6 @@
 const connect = require('../db_connections.js');
 
-const getCrMessages = cb => {
+const getChatRoomMessages = cb => {
   connect.query(
     'SELECT * FROM messages INNER JOIN chatRooms ON (messages.chatRoomId = chatRooms.id) order by time_stamp',
 
@@ -10,4 +10,4 @@ const getCrMessages = cb => {
   );
 };
 
-module.exports = { getCrMessages };
+module.exports = { getChatRoomMessages };

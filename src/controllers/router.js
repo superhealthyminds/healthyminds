@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const getHomePagePosts = require('./getHomePosts');
-const chatRoomsMessages = require('./getCrMessages');
+const getChatRoomMessages = require('./getChatRoomMessages');
 
 
 router.get('/homePagePosts', getHomePagePosts);
-router.get('/chatRoomsMessages', chatRoomsMessages);
+router.get('/chatRoomMessages', getChatRoomMessages);
 
 module.exports = router;
