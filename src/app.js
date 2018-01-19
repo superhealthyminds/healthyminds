@@ -14,14 +14,8 @@ app.get('/', (req, res) => {
 app.use(router);
 
 app.listen(port, () => {
-});
-
-app.use((err, req, res) => {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: { err, res, req }
-  });
+  // eslint-disable-next-line no-console
+  console.log(`app is runing on port http://localhost:${port}`);
 });
 
 module.exports = app;
