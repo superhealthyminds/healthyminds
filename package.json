@@ -8,7 +8,7 @@
     "test": "node tests/server_test.js",
     "dev": "nodemon src/app.js",
     "inspect": "node --inspect ./src/app.js ",
-    "lint": "eslint 'src/**/*.js'"
+    "lint": "eslint 'src/**/*.js' && eslint tests/**/*.js "
   },
   "author": "",
   "license": "ISC",
