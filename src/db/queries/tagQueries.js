@@ -6,7 +6,11 @@ const getAllTagsQuerry = cb => {
   SELECT * 
   FROM tags`,
     (err, res) => {
-      cb(err, res.rows);
+      if (err) {
+        cb(err);
+      } else {
+        cb(null, res.rows);
+      }
     }
   );
 };
@@ -21,8 +25,12 @@ const addTagQuerry = ({ tagName, diseaseId }, cb) => {
      ($1, $2)`,
     [tagName, diseaseId],
     err => {
-      // successful insert does not give result -> if error is empty it is success
-      cb(err, JSON.stringify({ success: 'the tag was added' }));
+      if (err) {
+        cb(err);
+      } else {
+        // successful insert does not give result -> if error is empty it is success
+        cb(null, JSON.stringify({ success: 'the tag was added' }));
+      }
     }
   );
 };

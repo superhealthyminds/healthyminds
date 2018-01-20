@@ -4,7 +4,11 @@ const getCommentsQuerie = cb => {
   connect.query(
     '(SELECT * FROM posts LEFT JOIN comments ON posts.id = comments.postID)',
     (err, res) => {
-      cb(err, res.rows);
+      if (err) {
+        cb(err);
+      } else {
+        cb(null, res.rows);
+      }
     }
   );
 };

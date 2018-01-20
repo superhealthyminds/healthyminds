@@ -18,4 +18,15 @@ app.listen(port, () => {
   console.log(`app is runing on port http://localhost:${port}`);
 });
 
+/* eslint-disable */
+app.use((err, req, res, next) => {
+  // next usage is mandatory
+  /* eslint-enable */
+  res.status(err.status || 500);
+  res.json({
+    message: err.message,
+    error: JSON.stringify(err)
+  });
+});
+
 module.exports = app;
