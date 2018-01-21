@@ -1,5 +1,5 @@
-const { getHomePagePostsQuery } = require('../db/Querys/postQuerys');
-const { getCommentsQuery } = require('../db/Querys/commentsQuerys');
+const { getHomePagePostsQuery } = require('../db/querys/postQuery');
+const { getCommentsQuery } = require('../db/querys/commentsQuery');
 
 const getHomePagePosts = (req, res, next) => {
   getHomePagePostsQuery((err, homePagePosts) => {

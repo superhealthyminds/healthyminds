@@ -1,4 +1,4 @@
-const { getAllTagsQuerry, addTagQuerry } = require('../db/Querys/tagQuerys');
+const { getAllTagsQuerry, addTagQuerry } = require('../db/querys/tagQuery');
 
 const getAllTags = (req, res, next) => {
   getAllTagsQuerry((err, allTags) => {

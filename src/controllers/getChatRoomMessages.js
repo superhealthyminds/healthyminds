@@ -1,4 +1,4 @@
-const chatRoomMessagesQuerys = require('../db/Querys/chatRoomMessagesQuery');
+const chatRoomMessagesQuerys = require('../db/querys/chatRoomMessagesQuery');
 
 module.exports = (req, res) => {
   chatRoomMessagesQuerys.getChatRoomMessages((err, chatRoomsMessages) => {

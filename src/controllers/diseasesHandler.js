@@ -1,4 +1,4 @@
-const { getAllDiseasesQuery } = require('../db/Querys/diseasesQuery');
+const { getAllDiseasesQuery } = require('../db/querys/diseasesQuery');
 
 const getAllDiseases = (req, res, next) => {
   getAllDiseasesQuery((err, Diseases) => {

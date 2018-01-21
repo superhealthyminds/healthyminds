@@ -8,7 +8,7 @@ test('Testing empty root get request - / ', t => {
     .get('/')
     .expect('Content-Type', /json/)
     .expect(200)
-    .end(() => { 
+    .end(() => {
       t.end();
     });
 });
@@ -38,14 +38,11 @@ test('Testing the root /homePagePosts  ', t => {
 
 test('Testing the root /getAllTags  ', t => {
   const expectedThings = [
-    {
-      id: 1,
-      tagname: 'cancer',
-      diseaseid: 1
-    }
+    { id: 1, tagname: 'cancer', diseaseid: 1 },
+    { id: 2, tagname: 'cancer', diseaseid: 1 }
   ];
   request(app)
-    .get('/getAllTags')
+    .get('/tags')
     .expect('Content-Type', /json/)
     .expect(200)
     .end((err, res) => {
