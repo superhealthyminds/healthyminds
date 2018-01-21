@@ -1,6 +1,6 @@
 const connect = require('../db_connections.js');
 
-const getHomePagePosts = (cb) => {
+const getHomePagePostsQuerie = (cb) => {
   connect.query(
     `(SELECT * FROM posts where type = 'story' order by time_stamp desc LIMIT 2)
       UNION ALL
@@ -14,4 +14,4 @@ const getHomePagePosts = (cb) => {
 };
 
 
-module.exports = {getHomePagePosts};
+module.exports = {getHomePagePostsQuerie};
