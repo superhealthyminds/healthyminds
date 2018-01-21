@@ -1,7 +1,7 @@
 const tape = require('tape');
 
 const runDbBuild = require('../src/db/db_buildTest');
-const postQueries = require('../src/db/queries/postQueries');
+const postQuerys = require('../src/db/Querys/postQuerys');
 
 tape('testing post request', t => {
   const expected = [
@@ -16,7 +16,7 @@ tape('testing post request', t => {
     }
   ];
   runDbBuild(() => {
-    postQueries.getHomePagePosts((err, res) => {
+    postQuerys.getHomePagePosts((err, res) => {
       t.deepEqual(res, expected, 'Returns success message');
       t.end();
     });

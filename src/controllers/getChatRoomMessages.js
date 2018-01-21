@@ -1,7 +1,7 @@
-const chatRoomMessagesQueries = require('../db/queries/chatRoomMessagesQueries');
+const chatRoomMessagesQuerys = require('../db/Querys/chatRoomMessagesQuery');
 
 module.exports = (req, res) => {
-  chatRoomMessagesQueries.getChatRoomMessages((err, chatRoomsMessages) => {
+  chatRoomMessagesQuerys.getChatRoomMessages((err, chatRoomsMessages) => {
     if (err) {
       // eslint-disable-next-line no-console
       console.log(err); // TODO: Error handling

@@ -1,6 +1,6 @@
 const connect = require('../db_connections.js');
 
-const getCommentsQuerie = cb => {
+const getCommentsQuery = cb => {
   connect.query(
     `(SELECT *
       FROM posts
@@ -16,4 +16,4 @@ const getCommentsQuerie = cb => {
   );
 };
 
-module.exports = { getCommentsQuerie };
+module.exports = { getCommentsQuery };

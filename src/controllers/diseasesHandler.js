@@ -1,7 +1,7 @@
-const { getAllDiseasesQuerie } = require('../db/queries/diseasesQueries');
+const { getAllDiseasesQuery } = require('../db/Querys/diseasesQuery');
 
 const getAllDiseases = (req, res, next) => {
-  getAllDiseasesQuerie((err, Diseases) => {
+  getAllDiseasesQuery((err, Diseases) => {
     if (err) {
       // eslint-disable-next-line no-console
       return next(err);

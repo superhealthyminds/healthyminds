@@ -1,6 +1,6 @@
 const connect = require('../db_connections.js');
 
-const getAllDiseasesQuerie = cb => {
+const getAllDiseasesQuery = cb => {
   connect.query('(SELECT * FROM diseases)', (err, res) => {
     if (err) {
       cb(err);
@@ -10,4 +10,4 @@ const getAllDiseasesQuerie = cb => {
   });
 };
 
-module.exports = { getAllDiseasesQuerie };
+module.exports = { getAllDiseasesQuery };
