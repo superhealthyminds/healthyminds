@@ -10,6 +10,8 @@ const getHomePagePosts = (req, res, next) => {
         if (err) {
           return next(err);
         } else {
+          res.header('Access-Control-Allow-Origin', '*');
+          res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
           res.json({ postComments, homePagePosts });
         }
       });
