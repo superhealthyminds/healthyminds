@@ -1,7 +1,7 @@
-const { getAllTagsQuerry, addTagQuerry } = require('../db/querys/tagQuery');
+const { getAllTagsQuery, addTagQuery } = require('../db/querys/tagQuery');
 
 const getAllTags = (req, res, next) => {
-  getAllTagsQuerry((err, allTags) => {
+  getAllTagsQuery((err, allTags) => {
     if (err) {
       // eslint-disable-next-line no-console
       return next(err);
@@ -12,7 +12,7 @@ const getAllTags = (req, res, next) => {
 };
 
 const addTag = (req, res, next) => {
-  addTagQuerry(req.body, (err, isSuccessful) => {
+  addTagQuery(req.body, (err, isSuccessful) => {
     if (err) {
       // eslint-disable-next-line no-console
       return next(err);

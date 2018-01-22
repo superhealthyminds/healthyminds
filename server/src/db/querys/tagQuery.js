@@ -1,6 +1,6 @@
 const connect = require('../db_connections.js');
 
-const getAllTagsQuerry = cb => {
+const getAllTagsQuery = cb => {
   connect.query(
     `
   SELECT * 
@@ -15,7 +15,7 @@ const getAllTagsQuerry = cb => {
   );
 };
 
-const addTagQuerry = ({ tagName, diseaseId }, cb) => {
+const addTagQuery = ({ tagName, diseaseId }, cb) => {
   connect.query(
     `
   INSERT INTO
@@ -35,4 +35,4 @@ const addTagQuerry = ({ tagName, diseaseId }, cb) => {
   );
 };
 
-module.exports = { getAllTagsQuerry, addTagQuerry };
+module.exports = { getAllTagsQuery, addTagQuery };
