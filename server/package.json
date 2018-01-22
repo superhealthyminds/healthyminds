@@ -5,9 +5,10 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "test": "node tests/server_test.js",
+    "test": "node tests/run_tests.js",
     "dev": "nodemon src/app.js",
-    "lint": "eslint 'src/**/*.js'"
+    "inspect": "node --inspect ./src/app.js ",
+    "lint": "eslint 'src/**/*.js' && eslint tests/**/*.js "
   },
   "author": "",
   "license": "ISC",

@@ -1,15 +1,19 @@
 const connect = require('../db_connections.js');
 
-const getComments = cb => {
+const getCommentsQuery = cb => {
   connect.query(
     `(SELECT *
       FROM posts
       LEFT JOIN comments
       ON posts.id = comments.postID)`,
     (err, res) => {
-      cb(err, res.rows);
+      if (err) {
+        cb(err);
+      } else {
+        cb(null, res.rows);
+      }
     }
   );
 };
 
-module.exports = { getComments };
+module.exports = { getCommentsQuery };

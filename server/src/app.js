@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const router = require('./controllers/router');
 const app = express();
 
-const port = process.env.Port || 3000;
+const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -14,13 +14,18 @@ app.get('/', (req, res) => {
 app.use(router);
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
+  console.log(`app is runing on port http://localhost:${port}`);
 });
 
-app.use((err, req, res) => {
+/* eslint-disable */
+app.use((err, req, res, next) => {
+  // next usage is mandatory
+  /* eslint-enable */
   res.status(err.status || 500);
-  res.render('error', {
+  res.json({
     message: err.message,
-    error: { err, res, req }
+    error: JSON.stringify(err)
   });
 });
 

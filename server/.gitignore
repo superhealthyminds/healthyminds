@@ -77,3 +77,5 @@ typings/
 
 # dotenv environment variables file
 *.env
+#vsc 
+launch.json

@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, posts, messages, chatRooms, diseases, tags, comments;
+DROP TABLE IF EXISTS diseases, tags, users, posts, comments, chatRooms, messages;
 
 CREATE TABLE diseases (
     id SERIAL PRIMARY KEY,
