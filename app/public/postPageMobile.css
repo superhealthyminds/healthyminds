@@ -1,0 +1,43 @@
+@media only screen and (max-width: 768px) {
+    nav button {
+        font-size: 32px;
+    }
+    .dropDown:hover .dropContent {
+        border-radius: 25px;
+    }
+    .dropContent a {
+        font-size: 32px;
+    }
+    .cRight {
+        position: fixed;
+        bottom: 0%;
+        opacity: 0.5;
+        left: 25%;
+        font-size: 24px;
+    }
+    .story .content {
+        max-width: 100%;
+    }
+    .comments {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav button {
+        font-size: 44px;
+    }
+    .dropDown:hover .dropContent {
+        border-radius: 32px;
+    }
+    .dropContent a {
+        font-size: 44px;
+    }
+    .cRight {
+        position: fixed;
+        bottom: 0%;
+        opacity: 0.5;
+        left: 25%;
+        font-size: 24px;
+    }
+}

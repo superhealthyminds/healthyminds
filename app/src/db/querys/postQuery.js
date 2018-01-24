@@ -19,11 +19,9 @@ const getHomePagePostsQuery = cb => {
 
 const getPostById = (id, cb) => {
   connect.query(
-    `SELECT * 
-    FROM postsp 
-    INNER JOIN
-    comments c ON 
-     p.id = c.postid`,
+    `SELECT *
+    FROM posts
+    WHERE id=$1`,
     [id],
     (err, res) => {
       if (err) {

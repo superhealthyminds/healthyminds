@@ -1,0 +1,35 @@
+
+
+{{>htmlHead}}
+    {{>htmlNavBar}}
+    <div class="storyContainer">
+        <div class="story">
+            <h1>{{singlePostPage.post.type}}</h1>
+            <div class="header">
+                <img src="user-icon.png" width="50px" alt="user-icon">
+                <h2 class="Username">Nicholas</h2>
+                <h2 class="title">{{singlePostPage.post.title}}</h2>
+                <h3>Published:{{singlePostPage.post.time_stamp}}</h3>
+            </div>
+            <div class="content">
+                <h4>{{singlePostPage.post.content}}</h4>
+            </div>
+            <div class="info">
+                <p class="tags">TAG1</p>
+                <p class="tags">TAG2</p>
+                <div class="likesContainer">
+                    <button class="likes">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
+                    <p class="likesNum">82</p>
+                </div>
+                <div class="viewsContainer">
+                    <p class="views">Views</p>
+                    <p class="viewsNum">178</p>
+                </div>
+            </div>
+            {{>singlePostComment}}
+        </div>
+        <p class="cRight">© 2017 Healthy Mind Team all right reserved!</p>
+    </div>
+{{>htmlFooter}}

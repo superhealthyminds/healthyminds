@@ -16,4 +16,20 @@ const getCommentsQuery = cb => {
   );
 };
 
-module.exports = { getCommentsQuery };
+const getCommentsByIdQuery = (postId, cb) => {
+  connect.query(
+    `SELECT *
+     FROM comments
+     where postId=$1`,
+    [postId],
+    (err, res) => {
+      if (err) {
+        cb(err);
+      } else {
+        cb(null, res.rows);
+      }
+    }
+  );
+};
+
+module.exports = { getCommentsQuery, getCommentsByIdQuery };
