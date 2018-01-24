@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.send('hi there');
+  res.send('sanity check');
 });
 
 app.set('views', path.join(__dirname, 'views'));
