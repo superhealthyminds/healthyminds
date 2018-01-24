@@ -1,0 +1,29 @@
+{
+  "name": "healthyminds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "node tests/run_tests.js",
+    "dev": "nodemon src/app.js",
+    "inspect": "node --inspect ./src/app.js ",
+    "lint": "eslint 'src/**/*.js' && eslint tests/**/*.js "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "env2": "^2.2.0",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "pg": "^7.4.1",
+    "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.13.3",
+    "supertest": "^3.0.0",
+    "tape": "^4.8.0",
+    "eslint": "^4.15.0"
+  }
+}
